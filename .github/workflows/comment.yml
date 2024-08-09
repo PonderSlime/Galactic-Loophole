@@ -2,7 +2,7 @@ name: Post Order Form on Merged PR
 
 on:
   pull_request:
-    types: [closed, labeled]
+    types: [closed]
     
 
 jobs:  
