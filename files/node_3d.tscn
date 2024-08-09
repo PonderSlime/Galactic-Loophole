@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://s7131ctflt1l"]
+[gd_scene load_steps=8 format=3 uid="uid://s7131ctflt1l"]
 
 [ext_resource type="PackedScene" uid="uid://bwi078dil4t7i" path="res://assets/player/fps_player_controller.tscn" id="1_g37ta"]
+[ext_resource type="Texture2D" uid="uid://bkrhisvdn1px3" path="res://assets/template/templateTex.png" id="2_lcrqp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qgpvg"]
 
@@ -11,19 +12,26 @@ sky_material = SubResource("ProceduralSkyMaterial_qgpvg")
 background_mode = 2
 sky = SubResource("Sky_j77el")
 ssao_enabled = true
-sdfgi_enabled = true
+sdfgi_y_scale = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko2tv"]
+albedo_texture = ExtResource("2_lcrqp")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tvcjq"]
+size = Vector2(100, 100)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-use_collision = true
-size = Vector3(100, 1, 100)
-
 [node name="FPSPlayerController" parent="." instance=ExtResource("1_g37ta")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7007, 1.55713, -4.80956)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lwn2a")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ko2tv")
+use_collision = true
+mesh = SubResource("PlaneMesh_tvcjq")

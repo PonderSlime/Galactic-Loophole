@@ -1,23 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwi078dil4t7i"]
+[gd_scene load_steps=9 format=3 uid="uid://bwi078dil4t7i"]
 
+[ext_resource type="Shader" path="res://assets/player/fps_player_controller.gdshader" id="1_c0awr"]
 [ext_resource type="Script" path="res://assets/player/fps_player_controller.gd" id="1_k8u5h"]
 [ext_resource type="PackedScene" uid="uid://jxroxrtev4bc" path="res://assets/player/models/hand.blend" id="2_v2hc6"]
 [ext_resource type="PackedScene" uid="uid://bedqteedekurt" path="res://assets/player/models/helmet.tscn" id="3_qj1i8"]
+[ext_resource type="PackedScene" uid="uid://cjsa8tct3mcsp" path="res://assets/player/models/body.blend" id="4_2r1cg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohydy"]
 
-[node name="FPSPlayerController" type="CharacterBody3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pcewv"]
+shader = ExtResource("1_c0awr")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_v2ya8"]
+size = Vector2(2, 2)
+
+[node name="FPSPlayerController" type="CharacterBody3D" node_paths=PackedStringArray("cam")]
 script = ExtResource("1_k8u5h")
+cam = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785, 0.19)
+fov = 59.0
 
 [node name="Body" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ohydy")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-fov = 59.0
-
-[node name="helmet2" parent="Camera3D" instance=ExtResource("3_qj1i8")]
-transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 0, -0.213355)
+[node name="helmet2" parent="." instance=ExtResource("3_qj1i8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.676, 0.079)
 
 [node name="hand" parent="." instance=ExtResource("2_v2hc6")]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.428759, 0.186536, -0.630409)
+
+[node name="body" parent="." instance=ExtResource("4_2r1cg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+material_override = SubResource("ShaderMaterial_pcewv")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_v2ya8")

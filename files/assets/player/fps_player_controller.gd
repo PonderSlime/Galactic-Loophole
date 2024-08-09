@@ -5,7 +5,7 @@ var speed = 5
 var jump_speed = 5
 var mouse_sensitivity = 0.002
 var pause_game : bool = false
-
+@export var cam : Camera3D
 func _physics_process(delta):
 	velocity.y += -gravity * delta
 	var input = Input.get_vector("left", "right", "forward", "back")
@@ -23,8 +23,8 @@ func _input(event):
 		
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
-		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
-		$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+		cam.rotate_x(-event.relative.y * mouse_sensitivity)
+		cam.rotation.x = clampf(cam.rotation.x, -deg_to_rad(70), deg_to_rad(70))
 func _is_paused():
 	if Input.is_action_just_pressed("pause"):
 		pause_game = !pause_game
