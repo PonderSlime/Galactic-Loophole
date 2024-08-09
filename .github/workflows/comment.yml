@@ -1,28 +1,33 @@
-name: Auto Comment on PR
+name: Post Order Form on Merged PR
 
 on:
   pull_request:
-    types:
-      - merged
-    tags:
-      - 'submission'
+    types: [closed]
+    
 
-jobs:
-  auto-comment:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Check PR Changes
-      id: pr-changes
-      run: echo "::set-output name=changes::${{ toJson(github.event.pull_request.changed_files) }}"
-
-    - name: Create Comment
-      if: steps.pr-changes.outputs.changes != '[]'
-      run: |
-        # Use GitHub API to create a comment on the PR
-        PR_NUMBER=${{ github.event.pull_request.number }}
-        COMMENT="Your checklist comment here"
-        GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-        COMMENT_URL="https://ponderslime.github.io"
-
-        curl -s -H "Authorization: token ${GITHUB_TOKEN}" -X POST $COMMENT_URL -d "{\"body\":\"$COMMENT\"}"
+jobs:  
+    post-order-form:
+      runs-on: ubuntu-latest
+      permissions:
+        issues: write
+        pull-requests: write
+  
+      steps:
+        - name: Post order form comment
+          uses: actions/github-script@v6
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            script: |
+              const pr = context.payload.pull_request;
+              const owner = context.payload.repository.owner.login;
+              const repo = context.payload.repository.name;
+              const number = context.payload.number;
+              if (pr.merged && pr.labels.some(label => label.name === 'submission')) {
+                const body = "🎉 Your PR has been merged! Go ahead and fill out the [order form](https://airtable.com/appv0BzBY2APyIXj6/shrhpWVXN5imMzUmw)!";
+                await github.rest.issues.createComment({
+                  issue_number: number,
+                  owner: owner,
+                  repo: repo,
+                  body: body,
+                });
+              }
