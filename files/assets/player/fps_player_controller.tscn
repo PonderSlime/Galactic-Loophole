@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwi078dil4t7i"]
+[gd_scene load_steps=5 format=3 uid="uid://bwi078dil4t7i"]
 
 [ext_resource type="Script" path="res://assets/player/fps_player_controller.gd" id="1_k8u5h"]
+[ext_resource type="PackedScene" uid="uid://jxroxrtev4bc" path="res://assets/player/models/hand.blend" id="2_v2hc6"]
+[ext_resource type="PackedScene" uid="uid://bedqteedekurt" path="res://assets/player/models/helmet.tscn" id="3_qj1i8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohydy"]
 
 [node name="FPSPlayerController" type="CharacterBody3D"]
 script = ExtResource("1_k8u5h")
 
-[node name="Foot" type="CollisionShape3D" parent="."]
+[node name="Body" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ohydy")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+fov = 59.0
+
+[node name="helmet2" parent="Camera3D" instance=ExtResource("3_qj1i8")]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 0, -0.213355)
+
+[node name="hand" parent="." instance=ExtResource("2_v2hc6")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.428759, 0.186536, -0.630409)

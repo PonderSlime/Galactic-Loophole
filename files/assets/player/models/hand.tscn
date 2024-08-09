@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2t3fucw0tg8v"]
+
+[ext_resource type="PackedScene" uid="uid://jxroxrtev4bc" path="res://assets/player/models/hand.blend" id="1_nyxv6"]
+
+[node name="hand" instance=ExtResource("1_nyxv6")]
