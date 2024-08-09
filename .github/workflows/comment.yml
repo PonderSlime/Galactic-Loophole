@@ -1,4 +1,4 @@
-name: Auto Comment on PR
+name: Auto Comment
 on: pull_request
 jobs:
   run:
