@@ -24,6 +24,7 @@ size = Vector2(100, 100)
 [node name="Node3D" type="Node3D"]
 
 [node name="FPSPlayerController" parent="." instance=ExtResource("1_g37ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45426, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lwn2a")
