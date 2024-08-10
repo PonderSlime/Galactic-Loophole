@@ -1,19 +1,32 @@
-[gd_scene load_steps=12 format=3 uid="uid://s7131ctflt1l"]
+[gd_scene load_steps=14 format=3 uid="uid://s7131ctflt1l"]
 
 [ext_resource type="PackedScene" uid="uid://bwi078dil4t7i" path="res://assets/player/fps_player_controller.tscn" id="1_g37ta"]
 [ext_resource type="Texture2D" uid="uid://bkrhisvdn1px3" path="res://assets/template/templateTex.png" id="2_lcrqp"]
+[ext_resource type="Shader" path="res://assets/shaders/outer_space.gdshader" id="2_liyho"]
 [ext_resource type="Script" path="res://assets/portal/portal.gd" id="3_i5fk7"]
 [ext_resource type="Script" path="res://assets/portal/portal_teleport.gd" id="4_wqpn4"]
+[ext_resource type="PackedScene" uid="uid://duv8dof50h8m4" path="res://assets/station/space_station_basic.tscn" id="6_q17r8"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qgpvg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_et1fb"]
+shader = ExtResource("2_liyho")
+shader_parameter/sky_color = Color(0.03, 0.05, 0.11, 1)
+shader_parameter/star_base_color = Color(0.8, 1, 0.3, 1)
+shader_parameter/star_hue_offset = 0.6
+shader_parameter/star_intensity = 0.08
+shader_parameter/star_twinkle_speed = 0.8
+shader_parameter/star_twinkle_intensity = 0.2
+shader_parameter/layer_scale = 20.0
+shader_parameter/layer_scale_step = 10.0
+shader_parameter/layers_count = 3
 
-[sub_resource type="Sky" id="Sky_j77el"]
-sky_material = SubResource("ProceduralSkyMaterial_qgpvg")
+[sub_resource type="Sky" id="Sky_wowfj"]
+sky_material = SubResource("ShaderMaterial_et1fb")
 
 [sub_resource type="Environment" id="Environment_lwn2a"]
 background_mode = 2
-sky = SubResource("Sky_j77el")
+sky = SubResource("Sky_wowfj")
 sdfgi_y_scale = 0
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko2tv"]
 albedo_texture = ExtResource("2_lcrqp")
@@ -45,13 +58,9 @@ material_override = SubResource("StandardMaterial3D_ko2tv")
 use_collision = true
 mesh = SubResource("PlaneMesh_tvcjq")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35974, -5.6)
-size = Vector3(12, 3.71948, 1)
-
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34117, 1.35974, -3.54294)
-size = Vector3(12, 3.71948, 1)
+size = Vector3(12, 3.5, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43, -5)
@@ -66,7 +75,7 @@ exit_portal = NodePath("../MeshInstance3D2")
 script = ExtResource("4_wqpn4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 shape = SubResource("BoxShape3D_p82rb")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
@@ -84,3 +93,6 @@ script = ExtResource("4_wqpn4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/Area3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
 shape = SubResource("BoxShape3D_p82rb")
+
+[node name="Node3D" parent="." instance=ExtResource("6_q17r8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44064, 0.0108933, 5.5038)

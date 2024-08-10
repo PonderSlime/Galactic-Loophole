@@ -25,6 +25,7 @@ shape = SubResource("CapsuleShape3D_ohydy")
 
 [node name="helmet2" parent="." instance=ExtResource("3_qj1i8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.676, 0.079)
+visible = false
 
 [node name="hand" parent="." instance=ExtResource("2_v2hc6")]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.428759, 0.186536, -0.630409)
@@ -34,7 +35,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785, 0.19)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785, 0.09)
 fov = 59.0
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Camera"]
@@ -48,7 +49,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Camera/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(1152, 648)
+size = Vector2i(640, 480)
 render_target_update_mode = 4
 
 [node name="Camera3D2" type="Camera3D" parent="Camera/SubViewportContainer/SubViewport"]

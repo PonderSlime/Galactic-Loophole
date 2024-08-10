@@ -1,4 +1,5 @@
 CSGBox3D
+SpotLight3D
 MeshInstance3D
 Area3D
 CollisionShape3D
@@ -11,4 +12,3 @@ Node
 Node3D
 CSGMesh3D
 DirectionalLight3D
-WorldEnvironment
