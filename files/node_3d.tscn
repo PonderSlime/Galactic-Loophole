@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://s7131ctflt1l"]
+[gd_scene load_steps=12 format=3 uid="uid://s7131ctflt1l"]
 
 [ext_resource type="PackedScene" uid="uid://bwi078dil4t7i" path="res://assets/player/fps_player_controller.tscn" id="1_g37ta"]
 [ext_resource type="Texture2D" uid="uid://bkrhisvdn1px3" path="res://assets/template/templateTex.png" id="2_lcrqp"]
+[ext_resource type="Script" path="res://assets/portal/portal.gd" id="3_i5fk7"]
+[ext_resource type="Script" path="res://assets/portal/portal_teleport.gd" id="4_wqpn4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qgpvg"]
 
@@ -11,7 +13,6 @@ sky_material = SubResource("ProceduralSkyMaterial_qgpvg")
 [sub_resource type="Environment" id="Environment_lwn2a"]
 background_mode = 2
 sky = SubResource("Sky_j77el")
-ssao_enabled = true
 sdfgi_y_scale = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko2tv"]
@@ -20,6 +21,13 @@ uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tvcjq"]
 size = Vector2(100, 100)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lcfor"]
+size = Vector2(1.5, 3)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p82rb"]
+size = Vector3(1.15, 3, 0)
 
 [node name="Node3D" type="Node3D"]
 
@@ -36,3 +44,43 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 material_override = SubResource("StandardMaterial3D_ko2tv")
 use_collision = true
 mesh = SubResource("PlaneMesh_tvcjq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35974, -5.6)
+size = Vector3(12, 3.71948, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34117, 1.35974, -3.54294)
+size = Vector3(12, 3.71948, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43, -5)
+mesh = SubResource("PlaneMesh_lcfor")
+script = ExtResource("3_i5fk7")
+disable_viewport_distance = 110.0
+fade_out_distance_max = 100.0
+fade_out_distance_min = 80.0
+exit_portal = NodePath("../MeshInstance3D2")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+script = ExtResource("4_wqpn4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+shape = SubResource("BoxShape3D_p82rb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 4.56795, 4.50449, -1.02625)
+mesh = SubResource("PlaneMesh_lcfor")
+script = ExtResource("3_i5fk7")
+disable_viewport_distance = 110.0
+fade_out_distance_max = 100.0
+fade_out_distance_min = 80.0
+exit_portal = NodePath("../MeshInstance3D")
+
+[node name="Area3D2" type="Area3D" parent="MeshInstance3D2"]
+script = ExtResource("4_wqpn4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+shape = SubResource("BoxShape3D_p82rb")

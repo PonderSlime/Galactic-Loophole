@@ -26,7 +26,6 @@ func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		cam.rotate_x(-event.relative.y * mouse_sensitivity)
-		$helmet2.rotate_x(-event.relative.y * (mouse_sensitivity))
 		cam.rotation.x = clampf(cam.rotation.x, -deg_to_rad(70), deg_to_rad(70))
 
 func _is_paused():

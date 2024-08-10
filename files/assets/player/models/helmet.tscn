@@ -24,7 +24,7 @@ shader_parameter/albedo = SubResource("NoiseTexture2D_k3cya")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0g1jn"]
 transparency = 1
 cull_mode = 2
-albedo_color = Color(0.796078, 1, 0.682353, 0.498039)
+albedo_color = Color(0.796078, 1, 0.682353, 0.235294)
 
 [node name="helmet" instance=ExtResource("1_yfyt1")]
 
@@ -32,4 +32,5 @@ albedo_color = Color(0.796078, 1, 0.682353, 0.498039)
 material_override = SubResource("ShaderMaterial_3hnxo")
 
 [node name="Visor" parent="." index="1"]
+visible = false
 material_override = SubResource("StandardMaterial3D_0g1jn")

@@ -1,0 +1,8 @@
+res://assets/player/fps_player_controller.tscn
+res://assets/player/models/helmet.tscn
+res://assets/player/models/hand.tscn
+res://node_3d.tscn
+res://assets/player/models/ps1.gdshader
+res://assets/player/fps_player_controller.gdshader
+res://assets/player/fps_player_controller.gd
+res://assets/portal/portal_teleport.gd

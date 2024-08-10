@@ -1,0 +1,638 @@
+{
+	"asset":{
+		"generator":"Khronos glTF Blender I/O v4.2.57",
+		"version":"2.0"
+	},
+	"extensionsUsed":[
+		"KHR_materials_specular"
+	],
+	"scene":0,
+	"scenes":[
+		{
+			"extras":{
+				"blosm":{
+					"defaultLevels":[
+						{
+							"levels":4,
+							"weight":10
+						},
+						{
+							"levels":5,
+							"weight":40
+						},
+						{
+							"levels":6,
+							"weight":10
+						}
+					]
+				},
+				"mcprep_skins_list":[
+					{
+						"label":"Admin22224&belt.png skin",
+						"description":"Admin22224&belt.png skin",
+						"name":"Admin22224&belt.png"
+					},
+					{
+						"label":"Admin22224&Trousers&belt.png skin",
+						"description":"Admin22224&Trousers&belt.png skin",
+						"name":"Admin22224&Trousers&belt.png"
+					},
+					{
+						"label":"Admin22224.Mcprep.png skin",
+						"description":"Admin22224.Mcprep.png skin",
+						"name":"Admin22224.Mcprep.png"
+					},
+					{
+						"label":"Admin22224.png skin",
+						"description":"Admin22224.png skin",
+						"name":"Admin22224.png"
+					},
+					{
+						"label":"alex.png skin",
+						"description":"alex.png skin",
+						"name":"alex.png"
+					},
+					{
+						"label":"foxynotail.png skin",
+						"description":"foxynotail.png skin",
+						"name":"foxynotail.png"
+					},
+					{
+						"label":"grian.png skin",
+						"description":"grian.png skin",
+						"name":"grian.png"
+					},
+					{
+						"label":"Harry Potter.png skin",
+						"description":"Harry Potter.png skin",
+						"name":"Harry Potter.png"
+					},
+					{
+						"label":"Lauren.png skin",
+						"description":"Lauren.png skin",
+						"name":"Lauren.png"
+					},
+					{
+						"label":"mhf_herobrine.png skin",
+						"description":"mhf_herobrine.png skin",
+						"name":"mhf_herobrine.png"
+					},
+					{
+						"label":"mrbeardstone.png skin",
+						"description":"mrbeardstone.png skin",
+						"name":"mrbeardstone.png"
+					},
+					{
+						"label":"mrcrayfish.png skin",
+						"description":"mrcrayfish.png skin",
+						"name":"mrcrayfish.png"
+					},
+					{
+						"label":"mumbojumbo.png skin",
+						"description":"mumbojumbo.png skin",
+						"name":"mumbojumbo.png"
+					},
+					{
+						"label":"notch.png skin",
+						"description":"notch.png skin",
+						"name":"notch.png"
+					},
+					{
+						"label":"pixlriffs.png skin",
+						"description":"pixlriffs.png skin",
+						"name":"pixlriffs.png"
+					},
+					{
+						"label":"PonderSlime with Hoodie.png skin",
+						"description":"PonderSlime with Hoodie.png skin",
+						"name":"PonderSlime with Hoodie.png"
+					},
+					{
+						"label":"PonderSlime Wonka Outfit.png skin",
+						"description":"PonderSlime Wonka Outfit.png skin",
+						"name":"PonderSlime Wonka Outfit.png"
+					},
+					{
+						"label":"ponderslime.png skin",
+						"description":"ponderslime.png skin",
+						"name":"ponderslime.png"
+					},
+					{
+						"label":"redshirt.png skin",
+						"description":"redshirt.png skin",
+						"name":"redshirt.png"
+					},
+					{
+						"label":"Santa-on-planetminecraft-com.png skin",
+						"description":"Santa-on-planetminecraft-com.png skin",
+						"name":"Santa-on-planetminecraft-com.png"
+					},
+					{
+						"label":"skipthetutorial.png skin",
+						"description":"skipthetutorial.png skin",
+						"name":"skipthetutorial.png"
+					},
+					{
+						"label":"steve.png skin",
+						"description":"steve.png skin",
+						"name":"steve.png"
+					},
+					{
+						"label":"steve2.png skin",
+						"description":"steve2.png skin",
+						"name":"steve2.png"
+					},
+					{
+						"label":"template-skin.png skin",
+						"description":"template-skin.png skin",
+						"name":"template-skin.png"
+					},
+					{
+						"label":"theduckcow.png skin",
+						"description":"theduckcow.png skin",
+						"name":"theduckcow.png"
+					},
+					{
+						"label":"thekindkitten.png skin",
+						"description":"thekindkitten.png skin",
+						"name":"thekindkitten.png"
+					},
+					{
+						"label":"Toolbelt-Trousers-from-the-Minecraft-Bedrock-character-creator-on-planetminecraft-com.png skin",
+						"description":"Toolbelt-Trousers-from-the-Minecraft-Bedrock-character-creator-on-planetminecraft-com.png skin",
+						"name":"Toolbelt-Trousers-from-the-Minecraft-Bedrock-character-creator-on-planetminecraft-com.png"
+					},
+					{
+						"label":"Wand.png skin",
+						"description":"Wand.png skin",
+						"name":"Wand.png"
+					},
+					{
+						"label":"wattles.png skin",
+						"description":"wattles.png skin",
+						"name":"wattles.png"
+					}
+				]
+			},
+			"name":"Scene",
+			"nodes":[
+				0,
+				1
+			]
+		}
+	],
+	"nodes":[
+		{
+			"extras":{
+				"jv_properties":{}
+			},
+			"mesh":0,
+			"name":"Helmet"
+		},
+		{
+			"extras":{
+				"jv_properties":{}
+			},
+			"mesh":1,
+			"name":"Visor"
+		}
+	],
+	"materials":[
+		{
+			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_specular":{
+					"specularColorFactor":[
+						0.9960784316062927,
+						0.9960784316062927,
+						0.9960784316062927
+					]
+				}
+			},
+			"name":"acesjustforro4",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.8980392217636108,
+					0.8980392217636108,
+					0.8980392217636108,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.9900000095367432
+			}
+		},
+		{
+			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_specular":{
+					"specularFactor":0,
+					"specularColorFactor":[
+						0.8980392217636108,
+						0.8980392217636108,
+						0.8980392217636108
+					]
+				}
+			},
+			"name":"acesjustforro7",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.49803921580314636,
+					0.49803921580314636,
+					0.49803921580314636,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.699999988079071
+			}
+		},
+		{
+			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_specular":{
+					"specularFactor":0,
+					"specularColorFactor":[
+						0.8980392217636108,
+						0.8980392217636108,
+						0.8980392217636108
+					]
+				}
+			},
+			"name":"acesjustforro5",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.929411768913269,
+					0.929411768913269,
+					0.929411768913269,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.699999988079071
+			}
+		},
+		{
+			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_specular":{
+					"specularColorFactor":[
+						0.9960784316062927,
+						0.9960784316062927,
+						0.9960784316062927
+					]
+				}
+			},
+			"name":"acesjustforro6",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.9900000095367432
+			}
+		}
+	],
+	"meshes":[
+		{
+			"name":"acesjustf9",
+			"primitives":[
+				{
+					"attributes":{
+						"POSITION":0,
+						"NORMAL":1,
+						"TEXCOORD_0":2,
+						"TANGENT":3
+					},
+					"indices":4,
+					"material":0
+				},
+				{
+					"attributes":{
+						"POSITION":5,
+						"NORMAL":6,
+						"TEXCOORD_0":7,
+						"TANGENT":8
+					},
+					"indices":9,
+					"material":1
+				}
+			]
+		},
+		{
+			"name":"acesjust13",
+			"primitives":[
+				{
+					"attributes":{
+						"POSITION":10,
+						"NORMAL":11,
+						"TEXCOORD_0":12,
+						"TANGENT":13
+					},
+					"indices":14,
+					"material":2
+				},
+				{
+					"attributes":{
+						"POSITION":15,
+						"NORMAL":16,
+						"TEXCOORD_0":17,
+						"TANGENT":18
+					},
+					"indices":19,
+					"material":3
+				}
+			]
+		}
+	],
+	"accessors":[
+		{
+			"bufferView":0,
+			"componentType":5126,
+			"count":11262,
+			"max":[
+				0.15527008473873138,
+				0.33351773023605347,
+				0.13733160495758057
+			],
+			"min":[
+				-0.15528790652751923,
+				-0.04589422047138214,
+				-0.19872383773326874
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":1,
+			"componentType":5126,
+			"count":11262,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":2,
+			"componentType":5126,
+			"count":11262,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":3,
+			"componentType":5126,
+			"count":11262,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":4,
+			"componentType":5123,
+			"count":11376,
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":5,
+			"componentType":5126,
+			"count":105802,
+			"max":[
+				0.17094559967517853,
+				0.20413677394390106,
+				0.09353791922330856
+			],
+			"min":[
+				-0.17085272073745728,
+				-0.03989918529987335,
+				-0.18787454068660736
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":6,
+			"componentType":5126,
+			"count":105802,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":7,
+			"componentType":5126,
+			"count":105802,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":8,
+			"componentType":5126,
+			"count":105802,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":9,
+			"componentType":5125,
+			"count":106140,
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":10,
+			"componentType":5126,
+			"count":6678,
+			"max":[
+				0.1626032143831253,
+				0.24404023587703705,
+				0.04664216190576553
+			],
+			"min":[
+				-0.1608775109052658,
+				-0.013985767960548401,
+				-0.21661797165870667
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":11,
+			"componentType":5126,
+			"count":6678,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":12,
+			"componentType":5126,
+			"count":6678,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":13,
+			"componentType":5126,
+			"count":6678,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":14,
+			"componentType":5123,
+			"count":6684,
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":15,
+			"componentType":5126,
+			"count":864,
+			"max":[
+				0.16555249691009521,
+				0.2264481633901596,
+				0.04515460878610611
+			],
+			"min":[
+				-0.1643441915512085,
+				-0.02370084822177887,
+				-0.2268938422203064
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":16,
+			"componentType":5126,
+			"count":864,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":17,
+			"componentType":5126,
+			"count":864,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":18,
+			"componentType":5126,
+			"count":864,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":19,
+			"componentType":5123,
+			"count":1296,
+			"type":"SCALAR"
+		}
+	],
+	"bufferViews":[
+		{
+			"buffer":0,
+			"byteLength":135144,
+			"byteOffset":0,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":135144,
+			"byteOffset":135144,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":90096,
+			"byteOffset":270288,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":180192,
+			"byteOffset":360384,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":22752,
+			"byteOffset":540576,
+			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":1269624,
+			"byteOffset":563328,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":1269624,
+			"byteOffset":1832952,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":846416,
+			"byteOffset":3102576,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":1692832,
+			"byteOffset":3948992,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":424560,
+			"byteOffset":5641824,
+			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":80136,
+			"byteOffset":6066384,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":80136,
+			"byteOffset":6146520,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":53424,
+			"byteOffset":6226656,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":106848,
+			"byteOffset":6280080,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":13368,
+			"byteOffset":6386928,
+			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":10368,
+			"byteOffset":6400296,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":10368,
+			"byteOffset":6410664,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":6912,
+			"byteOffset":6421032,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":13824,
+			"byteOffset":6427944,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":2592,
+			"byteOffset":6441768,
+			"target":34963
+		}
+	],
+	"buffers":[
+		{
+			"byteLength":6444360,
+			"uri":"helmet-e5b8a83bf2d28f88cf6f53ff0d1ddc09.bin"
+		}
+	]
+}
