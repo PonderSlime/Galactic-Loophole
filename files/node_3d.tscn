@@ -65,6 +65,9 @@ shader_parameter/gradient = SubResource("GradientTexture1D_aydao")
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Earth" parent="." instance=ExtResource("7_fpf84")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 1750, 0, 0)
+
 [node name="FPSPlayerController" parent="." instance=ExtResource("1_g37ta")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45426, 0)
 
@@ -73,9 +76,10 @@ environment = SubResource("Environment_lwn2a")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
-light_color = Color(0.868985, 0.868985, 0.868985, 1)
+light_color = Color(0.915044, 0.929723, 0.92265, 1)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4558, 0, 0)
 material_override = SubResource("StandardMaterial3D_ko2tv")
 use_collision = true
 mesh = SubResource("PlaneMesh_tvcjq")
@@ -117,10 +121,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
 shape = SubResource("BoxShape3D_p82rb")
 
 [node name="Node3D" parent="." instance=ExtResource("6_q17r8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44064, 0.0108933, 5.5038)
-
-[node name="Earth2" parent="." instance=ExtResource("7_fpf84")]
-transform = Transform3D(1, 0, 0, 0, 0.681998, 0.731354, 0, -0.731354, 0.681998, 1750, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4406, 0.0108933, 5.5038)
 
 [node name="BlackHole" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_bixfs")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -222, 222.07, 183.751)

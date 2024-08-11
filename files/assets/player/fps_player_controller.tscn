@@ -54,6 +54,7 @@ render_target_update_mode = 4
 
 [node name="Camera3D2" type="Camera3D" parent="Camera/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785, 0.19)
+visible = false
 fov = 59.0
 
 [node name="Area3D" type="Area3D" parent="."]
