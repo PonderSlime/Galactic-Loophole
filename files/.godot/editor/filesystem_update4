@@ -1,11 +1,10 @@
-res://assets/station/space_station_basic.tscn
-res://assets/player/fps_player_controller.gdshader
+res://node_3d.tscn
+res://assets/player/ps1_post_proccesing.gdshader
 res://assets/player/models/ps1.gdshader
 res://assets/shaders/outer_space.gdshader
-res://addons/kenney_prototype_tools/tool_gen.tscn
-res://addons/kenney_prototype_tools/tool_generator.gd
 res://assets/player/fps_player_controller.tscn
 res://assets/player/models/hand.tscn
-res://node_3d.tscn
 res://assets/player/models/helmet.tscn
-res://addons/kenney_prototype_tools/cube.tscn
+res://assets/station/space_station_basic.tscn
+res://assets/models/planets/earth.tscn
+res://assets/models/planets/earth.gd

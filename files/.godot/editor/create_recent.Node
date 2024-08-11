@@ -1,5 +1,8 @@
-CSGBox3D
+Node3D
+AnimationPlayer
+CSGSphere3D
 SpotLight3D
+CSGBox3D
 MeshInstance3D
 Area3D
 CollisionShape3D
@@ -9,6 +12,3 @@ SubViewportContainer
 ColorRect
 CanvasGroup
 Node
-Node3D
-CSGMesh3D
-DirectionalLight3D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://s7131ctflt1l"]
+[gd_scene load_steps=15 format=3 uid="uid://s7131ctflt1l"]
 
 [ext_resource type="PackedScene" uid="uid://bwi078dil4t7i" path="res://assets/player/fps_player_controller.tscn" id="1_g37ta"]
 [ext_resource type="Texture2D" uid="uid://bkrhisvdn1px3" path="res://assets/template/templateTex.png" id="2_lcrqp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://assets/portal/portal.gd" id="3_i5fk7"]
 [ext_resource type="Script" path="res://assets/portal/portal_teleport.gd" id="4_wqpn4"]
 [ext_resource type="PackedScene" uid="uid://duv8dof50h8m4" path="res://assets/station/space_station_basic.tscn" id="6_q17r8"]
+[ext_resource type="PackedScene" uid="uid://ckk01rgfisu55" path="res://assets/models/planets/earth.tscn" id="7_fpf84"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_et1fb"]
 shader = ExtResource("2_liyho")
@@ -52,6 +53,7 @@ environment = SubResource("Environment_lwn2a")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+light_color = Color(0.629675, 0.629675, 0.629675, 1)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 material_override = SubResource("StandardMaterial3D_ko2tv")
@@ -96,3 +98,6 @@ shape = SubResource("BoxShape3D_p82rb")
 
 [node name="Node3D" parent="." instance=ExtResource("6_q17r8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44064, 0.0108933, 5.5038)
+
+[node name="Earth2" parent="." instance=ExtResource("7_fpf84")]
+transform = Transform3D(1, 0, 0, 0, 0.681998, 0.731354, 0, -0.731354, 0.681998, 4500, 0, 0)
