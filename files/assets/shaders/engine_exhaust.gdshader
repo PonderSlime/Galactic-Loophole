@@ -1,5 +1,4 @@
 shader_type spatial;
-
 uniform sampler2D noise;
 uniform sampler2D gradient;
 
