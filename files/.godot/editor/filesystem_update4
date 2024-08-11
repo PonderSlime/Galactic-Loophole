@@ -8,3 +8,9 @@ res://assets/player/models/helmet.tscn
 res://assets/station/space_station_basic.tscn
 res://assets/models/planets/earth.tscn
 res://assets/models/planets/earth.gd
+res://assets/models/planets/black_hole.gdshader
+res://assets/models/planets/black_hole.tscn
+res://assets/models/black_hole.gdshader
+res://assets/models/planets/new_shader.gdshader
+res://assets/models/planets/black_hole_ring.gd
+res://assets/shaders/engine_exhaust.gdshader

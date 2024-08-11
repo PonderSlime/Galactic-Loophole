@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://s7131ctflt1l"]
+[gd_scene load_steps=22 format=3 uid="uid://s7131ctflt1l"]
 
 [ext_resource type="PackedScene" uid="uid://bwi078dil4t7i" path="res://assets/player/fps_player_controller.tscn" id="1_g37ta"]
 [ext_resource type="Texture2D" uid="uid://bkrhisvdn1px3" path="res://assets/template/templateTex.png" id="2_lcrqp"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://assets/portal/portal_teleport.gd" id="4_wqpn4"]
 [ext_resource type="PackedScene" uid="uid://duv8dof50h8m4" path="res://assets/station/space_station_basic.tscn" id="6_q17r8"]
 [ext_resource type="PackedScene" uid="uid://ckk01rgfisu55" path="res://assets/models/planets/earth.tscn" id="7_fpf84"]
+[ext_resource type="PackedScene" uid="uid://dbqle7fwts2pd" path="res://assets/models/planets/black_hole.tscn" id="8_bixfs"]
+[ext_resource type="Shader" path="res://assets/shaders/engine_exhaust.gdshader" id="9_ccyv8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_et1fb"]
 shader = ExtResource("2_liyho")
@@ -43,6 +45,24 @@ orientation = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_p82rb"]
 size = Vector3(1.15, 3, 0)
 
+[sub_resource type="Gradient" id="Gradient_2h04q"]
+offsets = PackedFloat32Array(0.729412, 1)
+colors = PackedColorArray(0.850876, 0.294053, 0, 1, 0.12677, 0.686326, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aydao"]
+gradient = SubResource("Gradient_2h04q")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vjlbk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yj3w5"]
+noise = SubResource("FastNoiseLite_vjlbk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k75wo"]
+render_priority = 0
+shader = ExtResource("9_ccyv8")
+shader_parameter/noise = SubResource("NoiseTexture2D_yj3w5")
+shader_parameter/gradient = SubResource("GradientTexture1D_aydao")
+
 [node name="Node3D" type="Node3D"]
 
 [node name="FPSPlayerController" parent="." instance=ExtResource("1_g37ta")]
@@ -53,7 +73,7 @@ environment = SubResource("Environment_lwn2a")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
-light_color = Color(0.629675, 0.629675, 0.629675, 1)
+light_color = Color(0.868985, 0.868985, 0.868985, 1)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 material_override = SubResource("StandardMaterial3D_ko2tv")
@@ -100,4 +120,12 @@ shape = SubResource("BoxShape3D_p82rb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44064, 0.0108933, 5.5038)
 
 [node name="Earth2" parent="." instance=ExtResource("7_fpf84")]
-transform = Transform3D(1, 0, 0, 0, 0.681998, 0.731354, 0, -0.731354, 0.681998, 4500, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.681998, 0.731354, 0, -0.731354, 0.681998, 1750, 0, 0)
+
+[node name="BlackHole" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_bixfs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -222, 222.07, 183.751)
+player = NodePath("../FPSPlayerController")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -4.07929, 1, 0)
+material_override = SubResource("ShaderMaterial_k75wo")

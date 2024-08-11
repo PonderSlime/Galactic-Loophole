@@ -17,7 +17,7 @@ texture_filter = 0
 script = ExtResource("1_r3k38")
 
 [node name="Planet" type="Node3D" parent="."]
-transform = Transform3D(500, 0, 0, 0, 458.53, -199.375, 0, 199.375, 458.53, 0, 0, 0)
+transform = Transform3D(200, 0, 0, 0, 183.412, -79.7498, 0, 79.7498, 183.412, 0, 0, 0)
 
 [node name="CSGSphere3D2" type="CSGSphere3D" parent="Planet"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

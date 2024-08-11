@@ -23,6 +23,7 @@ settings/stdout/print_fps=true
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]

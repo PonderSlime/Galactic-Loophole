@@ -1,3 +1,7 @@
+CSGCylinder3D
+CSGTorus3D
+ColorRect
+CanvasLayer
 Node3D
 AnimationPlayer
 CSGSphere3D
@@ -6,9 +10,6 @@ CSGBox3D
 MeshInstance3D
 Area3D
 CollisionShape3D
-CanvasLayer
 SubViewport
 SubViewportContainer
-ColorRect
 CanvasGroup
-Node
