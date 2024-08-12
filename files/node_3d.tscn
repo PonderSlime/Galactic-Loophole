@@ -39,11 +39,11 @@ uv1_triplanar = true
 size = Vector2(100, 100)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lcfor"]
-size = Vector2(1.5, 3)
+size = Vector2(10.6, 5)
 orientation = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p82rb"]
-size = Vector3(1.15, 3, 0)
+size = Vector3(10.5, 5, 1)
 
 [sub_resource type="Gradient" id="Gradient_2h04q"]
 offsets = PackedFloat32Array(0.729412, 1)
@@ -84,44 +84,40 @@ material_override = SubResource("StandardMaterial3D_ko2tv")
 use_collision = true
 mesh = SubResource("PlaneMesh_tvcjq")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34117, 1.35974, -3.54294)
-size = Vector3(12, 3.5, 1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43, -5)
+[node name="Portal1" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36.95, 3.03, -8)
 mesh = SubResource("PlaneMesh_lcfor")
 script = ExtResource("3_i5fk7")
 disable_viewport_distance = 110.0
 fade_out_distance_max = 100.0
 fade_out_distance_min = 80.0
-exit_portal = NodePath("../MeshInstance3D2")
+exit_portal = NodePath("../Portal2")
 
-[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Portal1"]
 script = ExtResource("4_wqpn4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal1/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("BoxShape3D_p82rb")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
-transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 4.56795, 4.50449, -1.02625)
+[node name="Portal2" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.032, 3.004, -19.995)
 mesh = SubResource("PlaneMesh_lcfor")
 script = ExtResource("3_i5fk7")
 disable_viewport_distance = 110.0
 fade_out_distance_max = 100.0
 fade_out_distance_min = 80.0
-exit_portal = NodePath("../MeshInstance3D")
+exit_portal = NodePath("../Portal1")
 
-[node name="Area3D2" type="Area3D" parent="MeshInstance3D2"]
+[node name="Area3D2" type="Area3D" parent="Portal2"]
 script = ExtResource("4_wqpn4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/Area3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal2/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("BoxShape3D_p82rb")
 
 [node name="Node3D" parent="." instance=ExtResource("6_q17r8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4406, 0.0108933, 5.5038)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, -5)
 
 [node name="BlackHole" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_bixfs")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -222, 222.07, 183.751)

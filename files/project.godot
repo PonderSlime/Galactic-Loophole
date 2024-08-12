@@ -23,8 +23,8 @@ settings/stdout/print_fps=true
 
 window/size/viewport_width=640
 window/size/viewport_height=480
-window/size/mode=2
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [input]
 
@@ -63,3 +63,4 @@ pause={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/screen_space_roughness_limiter/enabled=false

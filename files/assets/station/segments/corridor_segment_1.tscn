@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://77csnbu1qskp" path="res://assets/textures/kenney's-prototype-textures/PNG/Light/texture_03.png" id="1_aly87"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6gjy"]
+cull_mode = 2
 albedo_texture = ExtResource("1_aly87")
 uv1_triplanar = true
 
@@ -97,11 +98,6 @@ light_energy = 4.0
 light_indirect_energy = 16.0
 spot_range = 5.805
 
-[node name="LightmapProbe" type="LightmapProbe" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 3, 0.0500004)
-size = Vector3(12.8, 7.2, 7.9)
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
+size = Vector3(14, 8, 7)

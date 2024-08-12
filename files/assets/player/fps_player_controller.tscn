@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwi078dil4t7i"]
+[gd_scene load_steps=6 format=3 uid="uid://bwi078dil4t7i"]
 
-[ext_resource type="Shader" path="res://assets/player/ps1_post_proccesing.gdshader" id="1_c0awr"]
 [ext_resource type="Script" path="res://assets/player/fps_player_controller.gd" id="1_k8u5h"]
 [ext_resource type="PackedScene" uid="uid://jxroxrtev4bc" path="res://assets/player/models/hand.blend" id="2_v2hc6"]
 [ext_resource type="PackedScene" uid="uid://bedqteedekurt" path="res://assets/player/models/helmet.tscn" id="3_qj1i8"]
@@ -8,17 +7,10 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohydy"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sk6e3"]
-shader = ExtResource("1_c0awr")
-shader_parameter/enabled = true
-shader_parameter/dithering = true
-shader_parameter/colors = 12
-shader_parameter/dither_size = 1
-
 [node name="FPSPlayerController" type="CharacterBody3D" node_paths=PackedStringArray("cam", "camOverlay")]
 script = ExtResource("1_k8u5h")
 cam = NodePath("Camera")
-camOverlay = NodePath("Camera/SubViewportContainer/SubViewport/Camera3D2")
+camOverlay = NodePath("Camera/Camera3D2")
 
 [node name="BodyCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ohydy")
@@ -38,22 +30,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785, 0.09)
 fov = 59.0
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Camera"]
-material = SubResource("ShaderMaterial_sk6e3")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="Camera/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(640, 480)
-render_target_update_mode = 4
-
-[node name="Camera3D2" type="Camera3D" parent="Camera/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785, 0.19)
+[node name="Camera3D2" type="Camera3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 visible = false
 fov = 59.0
 
