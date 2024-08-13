@@ -10,7 +10,7 @@ uv1_triplanar = true
 albedo_texture = ExtResource("1_rxhf7")
 emission_enabled = true
 emission = Color(0.261598, 0.737, 0.954391, 1)
-emission_energy_multiplier = 3.0
+emission_energy_multiplier = 7.0
 uv1_triplanar = true
 
 [node name="CorridorRingExit" type="Node3D"]
