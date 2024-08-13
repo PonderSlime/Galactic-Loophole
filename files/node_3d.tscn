@@ -30,6 +30,8 @@ background_mode = 2
 sky = SubResource("Sky_wowfj")
 sdfgi_y_scale = 0
 glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 0.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko2tv"]
 albedo_texture = ExtResource("2_lcrqp")
@@ -88,7 +90,7 @@ mesh = SubResource("PlaneMesh_tvcjq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, 22.517)
 
 [node name="Portal1" type="MeshInstance3D" parent="SpaceStation" node_paths=PackedStringArray("exit_portal")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 3.001, -3)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 3, -3)
 mesh = SubResource("PlaneMesh_lcfor")
 skeleton = NodePath("../..")
 script = ExtResource("3_i5fk7")
@@ -105,7 +107,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("BoxShape3D_p82rb")
 
 [node name="Portal2" type="MeshInstance3D" parent="SpaceStation" node_paths=PackedStringArray("exit_portal")]
-transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34, 3.001, -14.995)
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34, 3, -15)
 mesh = SubResource("PlaneMesh_lcfor")
 skeleton = NodePath("../..")
 script = ExtResource("3_i5fk7")

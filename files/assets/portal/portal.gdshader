@@ -13,7 +13,7 @@ uniform float fade_out_distance_max = 10.0;
 uniform float fade_out_distance_min = 8.0;
 uniform vec4 fade_out_color = vec4(0.0);
 
-uniform sampler2D albedo:hint_default_black, source_color;
+uniform sampler2D albedo: hint_default_black, source_color;
 
 varying float pixel_distance;
 
@@ -34,5 +34,5 @@ void fragment() {
     
     // Fade-out color
     float t = smoothstep(fade_out_distance_min, fade_out_distance_max, pixel_distance);
-    ALBEDO = mix(portal_color, fade_out_color.rgb, t);
+    ALBEDO = mix(portal_color, fade_out_color.rgb, t) * 1.66;
 }

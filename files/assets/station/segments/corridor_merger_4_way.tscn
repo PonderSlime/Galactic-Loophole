@@ -1,84 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dydh8twbudv4n"]
+[gd_scene load_steps=4 format=3 uid="uid://dydh8twbudv4n"]
 
 [ext_resource type="Texture2D" uid="uid://77csnbu1qskp" path="res://assets/textures/kenney's-prototype-textures/PNG/Light/texture_03.png" id="1_e3fy4"]
-[ext_resource type="Shader" path="res://assets/station/segments/flicker_light.gdshader" id="2_s7qek"]
+[ext_resource type="PackedScene" uid="uid://hrvjra3ybe7r" path="res://assets/station/light_strip.tscn" id="3_okmjv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6gjy"]
 cull_mode = 2
 albedo_texture = ExtResource("1_e3fy4")
 uv1_triplanar = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wby1b"]
-render_priority = 0
-shader = ExtResource("2_s7qek")
-shader_parameter/texture_albedo = Color(0.808, 0.659, 0.38, 0.612)
-shader_parameter/COLOR_A = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/COLOR_B = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/THRESHOLD = 0.0
-shader_parameter/brightness = 4.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnaf1"]
-render_priority = 0
-shader = ExtResource("2_s7qek")
-shader_parameter/texture_albedo = Color(0.808, 0.659, 0.38, 0.612)
-shader_parameter/COLOR_A = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/COLOR_B = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/THRESHOLD = 0.0
-shader_parameter/brightness = 4.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3h1uu"]
-render_priority = 0
-shader = ExtResource("2_s7qek")
-shader_parameter/texture_albedo = Color(0.808, 0.659, 0.38, 0.612)
-shader_parameter/COLOR_A = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/COLOR_B = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/THRESHOLD = 0.0
-shader_parameter/brightness = 4.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dmqa"]
-render_priority = 0
-shader = ExtResource("2_s7qek")
-shader_parameter/texture_albedo = Color(0.808, 0.659, 0.38, 0.612)
-shader_parameter/COLOR_A = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/COLOR_B = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/THRESHOLD = 0.0
-shader_parameter/brightness = 4.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jx56"]
-render_priority = 0
-shader = ExtResource("2_s7qek")
-shader_parameter/texture_albedo = Color(0.808, 0.659, 0.38, 0.612)
-shader_parameter/COLOR_A = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/COLOR_B = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/THRESHOLD = 0.0
-shader_parameter/brightness = 4.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6uo3u"]
-render_priority = 0
-shader = ExtResource("2_s7qek")
-shader_parameter/texture_albedo = Color(0.808, 0.659, 0.38, 0.612)
-shader_parameter/COLOR_A = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/COLOR_B = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/THRESHOLD = 0.0
-shader_parameter/brightness = 4.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mlgb"]
-render_priority = 0
-shader = ExtResource("2_s7qek")
-shader_parameter/texture_albedo = Color(0.808, 0.659, 0.38, 0.612)
-shader_parameter/COLOR_A = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/COLOR_B = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/THRESHOLD = 0.0
-shader_parameter/brightness = 4.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_46t7b"]
-render_priority = 0
-shader = ExtResource("2_s7qek")
-shader_parameter/texture_albedo = Color(0.808, 0.659, 0.38, 0.612)
-shader_parameter/COLOR_A = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/COLOR_B = Color(0.808, 0.659, 0.38, 1)
-shader_parameter/THRESHOLD = 0.0
-shader_parameter/brightness = 4.0
 
 [node name="CorridorMerger4Way" type="Node3D"]
 
@@ -136,30 +64,6 @@ use_collision = true
 size = Vector3(8, 1, 7)
 
 [node name="Details" type="Node3D" parent="CorridorSegmentRing1"]
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="CorridorSegmentRing1/Details"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 5.58, 0)
-material_override = SubResource("ShaderMaterial_wby1b")
-use_collision = true
-size = Vector3(0.4, 0.2, 4)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CorridorSegmentRing1/Details/CSGBox3D9"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 4.0
-light_indirect_energy = 16.0
-spot_range = 5.805
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="CorridorSegmentRing1/Details"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 5.58, 0)
-material_override = SubResource("ShaderMaterial_vnaf1")
-use_collision = true
-size = Vector3(0.4, 0.2, 4)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CorridorSegmentRing1/Details/CSGBox3D10"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 4.0
-light_indirect_energy = 16.0
-spot_range = 5.805
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="CorridorSegmentRing1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 3, 0.0500004)
@@ -219,30 +123,6 @@ use_collision = true
 size = Vector3(8, 1, 7)
 
 [node name="Details" type="Node3D" parent="CorridorSegmentRing2"]
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="CorridorSegmentRing2/Details"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 5.58, 0)
-material_override = SubResource("ShaderMaterial_3h1uu")
-use_collision = true
-size = Vector3(0.4, 0.2, 4)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CorridorSegmentRing2/Details/CSGBox3D9"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 4.0
-light_indirect_energy = 16.0
-spot_range = 5.805
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="CorridorSegmentRing2/Details"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 5.58, 0)
-material_override = SubResource("ShaderMaterial_6dmqa")
-use_collision = true
-size = Vector3(0.4, 0.2, 4)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CorridorSegmentRing2/Details/CSGBox3D10"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 4.0
-light_indirect_energy = 16.0
-spot_range = 5.805
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="CorridorSegmentRing2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 3, 0.0500004)
@@ -315,30 +195,6 @@ size = Vector3(8, 1, 8)
 
 [node name="Details" type="Node3D" parent="CorridorSegmentRing3"]
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="CorridorSegmentRing3/Details"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 5.58, 0)
-material_override = SubResource("ShaderMaterial_6jx56")
-use_collision = true
-size = Vector3(0.4, 0.2, 4)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CorridorSegmentRing3/Details/CSGBox3D9"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 4.0
-light_indirect_energy = 16.0
-spot_range = 5.805
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="CorridorSegmentRing3/Details"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 5.58, 0)
-material_override = SubResource("ShaderMaterial_6uo3u")
-use_collision = true
-size = Vector3(0.4, 0.2, 4)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CorridorSegmentRing3/Details/CSGBox3D10"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 4.0
-light_indirect_energy = 16.0
-spot_range = 5.805
-
 [node name="ReflectionProbe" type="ReflectionProbe" parent="CorridorSegmentRing3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 3, 0.0500004)
 size = Vector3(14, 8, 7)
@@ -396,32 +252,6 @@ material_override = SubResource("StandardMaterial3D_u6gjy")
 use_collision = true
 size = Vector3(8, 1, 7)
 
-[node name="Details" type="Node3D" parent="CorridorSegmentRing4"]
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="CorridorSegmentRing4/Details"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 5.58, 0)
-material_override = SubResource("ShaderMaterial_1mlgb")
-use_collision = true
-size = Vector3(0.4, 0.2, 4)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CorridorSegmentRing4/Details/CSGBox3D9"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 4.0
-light_indirect_energy = 16.0
-spot_range = 5.805
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="CorridorSegmentRing4/Details"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 5.58, 0)
-material_override = SubResource("ShaderMaterial_46t7b")
-use_collision = true
-size = Vector3(0.4, 0.2, 4)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CorridorSegmentRing4/Details/CSGBox3D10"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 4.0
-light_indirect_energy = 16.0
-spot_range = 5.805
-
 [node name="ReflectionProbe" type="ReflectionProbe" parent="CorridorSegmentRing4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 3, 0.0500004)
 size = Vector3(14, 8, 7)
@@ -429,3 +259,35 @@ size = Vector3(14, 8, 7)
 [node name="ReflectionProbe2" type="ReflectionProbe" parent="CorridorSegmentRing4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999997, 3, 8.1)
 size = Vector3(10.2, 8, 10.2)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="LightStrip" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 5.5, -3)
+
+[node name="LightStrip2" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 5.5, 3)
+
+[node name="LightStrip3" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 5.5, -3)
+
+[node name="LightStrip4" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 5.5, 3)
+
+[node name="LightStrip5" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5.5, 8)
+
+[node name="LightStrip6" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5.5, 8)
+
+[node name="LightStrip9" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5.5, -8)
+
+[node name="LightStrip10" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5.5, -8)
+
+[node name="LightStrip7" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 5.5, -3)
+
+[node name="LightStrip8" parent="Lights" instance=ExtResource("3_okmjv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 5.5, 3)
