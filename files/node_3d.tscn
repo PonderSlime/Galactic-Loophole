@@ -39,7 +39,7 @@ uv1_triplanar = true
 size = Vector2(100, 100)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lcfor"]
-size = Vector2(10.6, 5)
+size = Vector2(10.7, 5)
 orientation = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p82rb"]
@@ -69,7 +69,7 @@ shader_parameter/gradient = SubResource("GradientTexture1D_aydao")
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 1750, 0, 0)
 
 [node name="FPSPlayerController" parent="." instance=ExtResource("1_g37ta")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45426, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18018, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lwn2a")
@@ -84,45 +84,47 @@ material_override = SubResource("StandardMaterial3D_ko2tv")
 use_collision = true
 mesh = SubResource("PlaneMesh_tvcjq")
 
-[node name="Portal1" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36.95, 3.03, -8)
+[node name="SpaceStation" parent="." instance=ExtResource("6_q17r8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, 22.517)
+
+[node name="Portal1" type="MeshInstance3D" parent="SpaceStation" node_paths=PackedStringArray("exit_portal")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 3.001, -3)
 mesh = SubResource("PlaneMesh_lcfor")
+skeleton = NodePath("../..")
 script = ExtResource("3_i5fk7")
 disable_viewport_distance = 110.0
 fade_out_distance_max = 100.0
 fade_out_distance_min = 80.0
 exit_portal = NodePath("../Portal2")
 
-[node name="Area3D" type="Area3D" parent="Portal1"]
+[node name="Area3D" type="Area3D" parent="SpaceStation/Portal1"]
 script = ExtResource("4_wqpn4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal1/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpaceStation/Portal1/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("BoxShape3D_p82rb")
 
-[node name="Portal2" type="MeshInstance3D" parent="." node_paths=PackedStringArray("exit_portal")]
-transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.032, 3.004, -19.995)
+[node name="Portal2" type="MeshInstance3D" parent="SpaceStation" node_paths=PackedStringArray("exit_portal")]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34, 3.001, -14.995)
 mesh = SubResource("PlaneMesh_lcfor")
+skeleton = NodePath("../..")
 script = ExtResource("3_i5fk7")
 disable_viewport_distance = 110.0
 fade_out_distance_max = 100.0
 fade_out_distance_min = 80.0
 exit_portal = NodePath("../Portal1")
 
-[node name="Area3D2" type="Area3D" parent="Portal2"]
+[node name="Area3D2" type="Area3D" parent="SpaceStation/Portal2"]
 script = ExtResource("4_wqpn4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal2/Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpaceStation/Portal2/Area3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("BoxShape3D_p82rb")
-
-[node name="Node3D" parent="." instance=ExtResource("6_q17r8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, -5)
 
 [node name="BlackHole" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_bixfs")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -222, 222.07, 183.751)
 player = NodePath("../FPSPlayerController")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -4.07929, 1, 0)
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -4.07929, 1.6, 0)
 material_override = SubResource("ShaderMaterial_k75wo")

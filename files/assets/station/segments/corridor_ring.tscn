@@ -56,3 +56,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 3, 0)
 material_override = SubResource("StandardMaterial3D_u6gjy")
 use_collision = true
 size = Vector3(1, 4.334, 2)
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 3, 0)
+size = Vector3(13.8, 8, 3)

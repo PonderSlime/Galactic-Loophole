@@ -1,12 +1,10 @@
 extends CharacterBody3D
 
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+@export var gravity = 9.8
 var speed = 5
-var jump_speed = 5
+var jump_speed = 7
 var mouse_sensitivity = 0.002
-var pause_game : bool = false
 @export var cam : Camera3D
-@export var camOverlay : Camera3D
 func _physics_process(delta):
 	
 	velocity.y += -gravity * delta
@@ -18,20 +16,9 @@ func _physics_process(delta):
 	move_and_slide()
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_speed
-	_is_paused()
-	camOverlay.global_position = cam.global_position
-	camOverlay.global_rotation = cam.global_rotation
 func _input(event):
 		
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		cam.rotate_x(-event.relative.y * mouse_sensitivity)
 		cam.rotation.x = clampf(cam.rotation.x, -deg_to_rad(70), deg_to_rad(70))
-
-func _is_paused():
-	if Input.is_action_just_pressed("pause"):
-		pause_game = !pause_game
-	if pause_game == false:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	elif pause_game == true:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
