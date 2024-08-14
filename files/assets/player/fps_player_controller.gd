@@ -5,6 +5,9 @@ var speed = 5
 var jump_speed = 7
 var mouse_sensitivity = 0.002
 @export var cam : Camera3D
+
+func _ready() -> void:
+	add_to_group("player")
 func _physics_process(delta):
 	
 	velocity.y += -gravity * delta
