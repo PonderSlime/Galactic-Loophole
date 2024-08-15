@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://s7131ctflt1l"]
+[gd_scene load_steps=24 format=3 uid="uid://s7131ctflt1l"]
 
 [ext_resource type="PackedScene" uid="uid://bwi078dil4t7i" path="res://assets/player/fps_player_controller.tscn" id="1_g37ta"]
 [ext_resource type="Texture2D" uid="uid://bkrhisvdn1px3" path="res://assets/template/templateTex.png" id="2_lcrqp"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dbqle7fwts2pd" path="res://assets/models/planets/black_hole.tscn" id="8_bixfs"]
 [ext_resource type="Shader" path="res://assets/shaders/engine_exhaust.gdshader" id="9_ccyv8"]
 [ext_resource type="PackedScene" uid="uid://cgvupop7jkth8" path="res://assets/enemy/creepy_enemy.tscn" id="10_d8fl7"]
+[ext_resource type="PackedScene" uid="uid://tybkiuiodgm3" path="res://assets/models/items/can.tscn" id="11_jpl5k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_et1fb"]
 shader = ExtResource("2_liyho")
@@ -151,3 +152,15 @@ material_override = SubResource("ShaderMaterial_k75wo")
 
 [node name="CreepyEnemy" parent="." instance=ExtResource("10_d8fl7")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -26.084, 1.03, -2.848)
+
+[node name="Can" parent="." instance=ExtResource("11_jpl5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9907, 2.51761, -7.23136)
+
+[node name="Can2" parent="." instance=ExtResource("11_jpl5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9907, 2.51761, -7.23136)
+
+[node name="Can3" parent="." instance=ExtResource("11_jpl5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9907, 2.51761, -7.23136)
+
+[node name="Can4" parent="." instance=ExtResource("11_jpl5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9907, 2.51761, -7.23136)

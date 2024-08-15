@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwi078dil4t7i"]
+[gd_scene load_steps=8 format=3 uid="uid://bwi078dil4t7i"]
 
 [ext_resource type="Script" path="res://assets/player/fps_player_controller.gd" id="1_k8u5h"]
 [ext_resource type="PackedScene" uid="uid://jxroxrtev4bc" path="res://assets/player/models/hand.blend" id="2_v2hc6"]
 [ext_resource type="PackedScene" uid="uid://bedqteedekurt" path="res://assets/player/models/helmet.tscn" id="3_qj1i8"]
 [ext_resource type="PackedScene" uid="uid://cjsa8tct3mcsp" path="res://assets/player/models/body.blend" id="4_2r1cg"]
+[ext_resource type="Script" path="res://assets/player/item_pickup.gd" id="5_mpy4d"]
 [ext_resource type="PackedScene" uid="uid://b755xi4isyt17" path="res://screens/pause_screen.tscn" id="5_nnd4e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohydy"]
@@ -30,6 +31,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785, 0.09)
 fov = 59.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera"]
+target_position = Vector3(0, 0, -2.5)
+collision_mask = 2147483649
+collide_with_areas = true
+script = ExtResource("5_mpy4d")
 
 [node name="Area3D" type="Area3D" parent="."]
 metadata/teleportable_root = NodePath("..")
