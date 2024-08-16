@@ -24,17 +24,16 @@ shader_parameter/layer_scale = 20.0
 shader_parameter/layer_scale_step = 10.0
 shader_parameter/layers_count = 3
 
-[sub_resource type="Sky" id="Sky_wowfj"]
+[sub_resource type="Sky" id="Sky_3h2n1"]
 sky_material = SubResource("ShaderMaterial_et1fb")
 
 [sub_resource type="Environment" id="Environment_lwn2a"]
 background_mode = 2
-sky = SubResource("Sky_wowfj")
+sky = SubResource("Sky_3h2n1")
 sdfgi_y_scale = 0
 glow_enabled = true
-fog_enabled = true
 fog_density = 0.05
-volumetric_fog_density = 1.0
+volumetric_fog_density = 0.0
 adjustment_enabled = true
 adjustment_brightness = 0.6
 
