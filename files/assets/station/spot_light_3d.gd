@@ -47,6 +47,3 @@ func update_cone() -> void:
 	_cone_mesh.mesh.top_radius = 0.0
 	_cone_mesh.mesh.bottom_radius = length * sin(a) / sin(c)
 	_cone_mesh.mesh.height = length
-	
-func _process(delta: float) -> void:
-	_cone_mesh.set_visibility_parent(get_path_to($LightStripLit))

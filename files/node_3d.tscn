@@ -83,6 +83,8 @@ environment = SubResource("Environment_lwn2a")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 light_color = Color(0.915044, 0.929723, 0.92265, 1)
+shadow_enabled = true
+directional_shadow_mode = 0
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4558, 0, 0)
@@ -130,7 +132,6 @@ shape = SubResource("BoxShape3D_p82rb")
 [node name="Portal3" type="MeshInstance3D" parent="SpaceStation" node_paths=PackedStringArray("exit_portal")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -38.7, 8.82, -26)
 mesh = SubResource("PlaneMesh_lcfor")
-skeleton = NodePath("../..")
 script = ExtResource("3_i5fk7")
 disable_viewport_distance = 110.0
 fade_out_distance_max = 100.0

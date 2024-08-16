@@ -3,6 +3,7 @@ extends Node
 var player_health = 100
 var cans_count = 0
 var current_scene = null
+var power_off : bool = false
 
 func _ready() -> void:
 	var root = get_tree().root
@@ -22,6 +23,9 @@ func _ready() -> void:
 			var health = node_data["health"]
 func _process(delta: float) -> void:
 	save_game()
+	if Input.is_action_just_pressed("light"):
+		power_off = !power_off
+		print(power_off)
 
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)	
