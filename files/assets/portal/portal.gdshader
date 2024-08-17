@@ -7,7 +7,7 @@
 */
 
 shader_type spatial;
-render_mode unshaded;
+render_mode unshaded, shadows_disabled;
 
 uniform float fade_out_distance_max = 10.0;
 uniform float fade_out_distance_min = 8.0;
@@ -34,5 +34,5 @@ void fragment() {
 
     // Fade-out color
     float t = smoothstep(fade_out_distance_min, fade_out_distance_max, pixel_distance);
-    ALBEDO = mix(portal_color, fade_out_color.rgb, t) * 1.66;
+    ALBEDO = mix(portal_color, fade_out_color.rgb, t);
 }
