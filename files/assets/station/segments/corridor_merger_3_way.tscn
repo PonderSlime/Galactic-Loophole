@@ -1,12 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d20oxhdc0umqj"]
 
-[ext_resource type="Texture2D" uid="uid://77csnbu1qskp" path="res://assets/textures/kenney's-prototype-textures/PNG/Light/texture_03.png" id="1_kd2ax"]
+[ext_resource type="Material" uid="uid://d38bsrpjdy2n8" path="res://assets/station/segments/wall_mat.tres" id="2_gbcna"]
 [ext_resource type="PackedScene" uid="uid://hrvjra3ybe7r" path="res://assets/station/light_strip.tscn" id="2_idaq5"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6gjy"]
-cull_mode = 2
-albedo_texture = ExtResource("1_kd2ax")
-uv1_triplanar = true
+[ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat.tres" id="3_o2y8p"]
 
 [node name="CorridorMerger3Way" type="Node3D"]
 
@@ -37,49 +33,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing1/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 3, 0)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 4.334, 6)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing1/Walls"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -4.898, 5.404, -0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 2.664, 7)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing1/Walls"]
 transform = Transform3D(0.5, 0.866025, 0, 0.866025, -0.5, 8.74228e-08, 7.57103e-08, -4.37114e-08, -1, -4.898, 0.604, -0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("3_o2y8p")
 use_collision = true
 size = Vector3(1, 2.664, 7)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing1/Walls"]
 transform = Transform3D(-0.5, -0.866025, 8.74228e-08, -0.866025, 0.5, 0, -4.37114e-08, -7.57103e-08, -1, 4.902, 5.404, -0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 2.664, 7)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing1/Walls"]
 transform = Transform3D(-0.5, -0.866025, -8.74228e-08, 0.866025, -0.5, 8.74228e-08, -1.19422e-07, -3.1999e-08, 1, 4.902, 0.604, -0.55)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("3_o2y8p")
 use_collision = true
 size = Vector3(1, 2.664, 7.1)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing1/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("3_o2y8p")
 use_collision = true
 size = Vector3(8, 1, 7)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing1/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 3, 0)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 4.334, 6)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing1/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(8, 1, 7)
 
@@ -92,43 +88,43 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0,
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing3/Walls"]
 transform = Transform3D(-0.5, -0.866025, 8.74228e-08, -0.866025, 0.5, 0, -4.37114e-08, -7.57103e-08, -1, 4.902, 5.404, -0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 2.664, 7)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing3/Walls"]
 transform = Transform3D(-0.5, -0.866025, -8.74228e-08, 0.866025, -0.5, 8.74228e-08, -1.19422e-07, -3.1999e-08, 1, 4.902, 0.604, -0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("3_o2y8p")
 use_collision = true
 size = Vector3(1, 2.664, 7)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing3/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("3_o2y8p")
 use_collision = true
 size = Vector3(8, 1, 7)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing3/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 3, 0)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 4.334, 6)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing3/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(8, 1, 7)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing3/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83122e-07, 6, -8)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(8, 1, 8)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing3/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("3_o2y8p")
 use_collision = true
 size = Vector3(8, 1, 8)
 
@@ -141,49 +137,49 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, 
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing4/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 3, 8)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 4.334, 22)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing4/Walls"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -4.898, 5.404, 8)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 2.664, 22)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing4/Walls"]
 transform = Transform3D(0.5, 0.866025, 0, 0.866025, -0.5, 8.74228e-08, 7.57103e-08, -4.37114e-08, -1, -4.898, 0.603999, 8)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("3_o2y8p")
 use_collision = true
 size = Vector3(1, 2.664, 22)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing4/Walls"]
 transform = Transform3D(-0.5, -0.866025, 8.74228e-08, -0.866025, 0.5, 0, -4.37114e-08, -7.57103e-08, -1, 4.902, 5.404, 0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 2.664, 7)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing4/Walls"]
 transform = Transform3D(-0.5, -0.866025, -8.74228e-08, 0.866025, -0.5, 8.74228e-08, -1.19422e-07, -3.1999e-08, 1, 4.902, 0.604, 0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("3_o2y8p")
 use_collision = true
 size = Vector3(1, 2.664, 7)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing4/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("3_o2y8p")
 use_collision = true
 size = Vector3(8, 1, 7)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing4/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 3, 0)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(1, 4.334, 6)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing4/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_gbcna")
 use_collision = true
 size = Vector3(8, 1, 7)
 

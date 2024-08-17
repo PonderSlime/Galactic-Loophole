@@ -44,7 +44,7 @@ script = ExtResource("5_mpy4d")
 script = ExtResource("6_p7m71")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera/Flashlight"]
-light_color = Color(0.886826, 0.780258, 0.729879, 1)
+light_color = Color(0.960531, 0.779623, 0.726805, 1)
 light_energy = 0.1
 spot_range = 30.0
 spot_attenuation = 1.1

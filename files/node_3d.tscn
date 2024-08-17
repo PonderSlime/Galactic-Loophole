@@ -130,7 +130,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("BoxShape3D_p82rb")
 
 [node name="Portal3" type="MeshInstance3D" parent="SpaceStation" node_paths=PackedStringArray("exit_portal")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -38.7, 8.82, -26)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -38.65, 8.83, -26)
 mesh = SubResource("PlaneMesh_lcfor")
 script = ExtResource("3_i5fk7")
 disable_viewport_distance = 110.0
