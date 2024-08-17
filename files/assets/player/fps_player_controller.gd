@@ -5,14 +5,29 @@ var speed = 5
 var jump_speed = 7
 var mouse_sensitivity = 0.002
 @export var cam : Camera3D
-
+#@onready var state_machine = $AnimationTree["parameters/playback"]
+var grav : bool = false
+var flip : bool = false
 func _ready() -> void:
 	add_to_group("player")	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("grav_swap"):
-			gravity = -gravity
-			jump_speed = -jump_speed
-			rotation_degrees.z += 180
+		grav = !grav
+		gravity = -gravity
+		jump_speed = -jump_speed
+		flip = true
+			
+	if grav and flip == true:
+			rotation_degrees.z += 1
+			if rotation_degrees.z == 180:
+				flip = false
+				rotation_degrees.z = 180
+			print(rotation_degrees.z)
+	elif !grav and flip == true:
+			rotation_degrees.z -= 1
+			if rotation_degrees.z == 0:
+				flip = false
+				rotation_degrees.z = 0
 	velocity.y += -gravity * delta
 	var input = Input.get_vector("left", "right", "forward", "back")
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
