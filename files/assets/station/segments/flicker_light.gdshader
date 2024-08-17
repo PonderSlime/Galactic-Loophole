@@ -1,5 +1,5 @@
 shader_type spatial;
-
+render_mode vertex_lighting;
 uniform vec4 texture_albedo : source_color = vec4(0.808, 0.659, 0.38, 0.612);
 uniform vec3 COLOR_A : source_color = vec3(0.808, 0.659, 0.38);
 uniform vec3 COLOR_B : source_color = vec3(0.808, 0.659, 0.38);

@@ -28,6 +28,7 @@ size = Vector3(0.4, 0.2, 4)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_color = Color(0.949735, 0.862542, 0.708034, 1)
 light_energy = 4.0
+light_indirect_energy = 16.0
 spot_range = 5.805
 script = ExtResource("2_jijiy")
 opacity = 0.1

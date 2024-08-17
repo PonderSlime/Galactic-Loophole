@@ -33,7 +33,6 @@ sdfgi_y_scale = 0
 glow_enabled = true
 fog_density = 0.05
 volumetric_fog_density = 0.0
-adjustment_enabled = true
 adjustment_brightness = 0.6
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lcfor"]

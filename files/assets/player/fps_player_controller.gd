@@ -8,6 +8,7 @@ var mouse_sensitivity = 0.002
 #@onready var state_machine = $AnimationTree["parameters/playback"]
 var grav : bool = false
 var flip : bool = false
+var is_rotating : bool = false
 func _ready() -> void:
 	add_to_group("player")	
 func _physics_process(delta):
@@ -15,19 +16,17 @@ func _physics_process(delta):
 		grav = !grav
 		gravity = -gravity
 		jump_speed = -jump_speed
-		flip = true
+		flip = !flip
+		is_rotating = true
 			
-	if grav and flip == true:
-			rotation_degrees.z += 1
-			if rotation_degrees.z == 180:
-				flip = false
-				rotation_degrees.z = 180
-			print(rotation_degrees.z)
-	elif !grav and flip == true:
-			rotation_degrees.z -= 1
-			if rotation_degrees.z == 0:
-				flip = false
-				rotation_degrees.z = 0
+	if flip == true:
+		rotation.z = lerp_angle(rotation.z, deg_to_rad(180), delta * deg_to_rad(180))
+		if rotation.z == deg_to_rad(180):
+			is_rotating = false
+	elif flip== false:
+		rotation.z = lerp_angle(rotation.z, deg_to_rad(0), delta * deg_to_rad(180))
+		if rotation.z == deg_to_rad(0):
+			is_rotating = false
 	velocity.y += -gravity * delta
 	var input = Input.get_vector("left", "right", "forward", "back")
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
