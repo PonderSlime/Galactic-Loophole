@@ -4,7 +4,7 @@ var player_health = 100
 var cans_count = 0
 var current_scene = null
 var power_off : bool = false
-
+var random10
 func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -22,11 +22,16 @@ func _ready() -> void:
 			var node_data = json.get_data()
 			var health = node_data["health"]
 func _process(delta: float) -> void:
+	_random_event()
 	save_game()
-	if Input.is_action_just_pressed("light"):
-		power_off = !power_off
-		print(power_off)
-
+		
+func _random_event():
+	await get_tree().create_timer(10).timeout
+	random10 = randi_range(0, 10)
+	if random10 <= 5:
+		power_off = true
+	else:
+		power_off = false
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)	
 

@@ -15,5 +15,4 @@ func pickup():
 		GlobalVars.cans_count = 2
 	elif GlobalVars.cans_count < 2:
 		GlobalVars.cans_count += 1
-		print(GlobalVars.cans_count)
 		queue_free()

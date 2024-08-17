@@ -1,2 +1,1 @@
-# Loopholes
-Game submission for #arcade-jam in 2024. Set in space in an abandoned space station. You try to escape the endless maze
+	This is my submission for #arcade-jam. You have been invited to a space station by an unknown person. Once you arrive, you discover that it is abandoned. As you explore the station, you discover that you are not alone. This game is intended to be playable on most platforms. If you come across an issue, feel free to open one in the repository!

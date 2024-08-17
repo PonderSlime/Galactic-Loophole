@@ -1,7 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://s7131ctflt1l"]
+[gd_scene load_steps=21 format=3 uid="uid://s7131ctflt1l"]
 
 [ext_resource type="PackedScene" uid="uid://bwi078dil4t7i" path="res://assets/player/fps_player_controller.tscn" id="1_g37ta"]
-[ext_resource type="Texture2D" uid="uid://bkrhisvdn1px3" path="res://assets/template/templateTex.png" id="2_lcrqp"]
 [ext_resource type="Shader" path="res://assets/shaders/outer_space.gdshader" id="2_liyho"]
 [ext_resource type="Script" path="res://assets/portal/portal.gd" id="3_i5fk7"]
 [ext_resource type="Script" path="res://assets/portal/portal_teleport.gd" id="4_wqpn4"]
@@ -36,13 +35,6 @@ fog_density = 0.05
 volumetric_fog_density = 0.0
 adjustment_enabled = true
 adjustment_brightness = 0.6
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko2tv"]
-albedo_texture = ExtResource("2_lcrqp")
-uv1_triplanar = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_tvcjq"]
-size = Vector2(100, 100)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lcfor"]
 size = Vector2(10.7, 5)
@@ -85,12 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 light_color = Color(0.915044, 0.929723, 0.92265, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4558, 0, 0)
-material_override = SubResource("StandardMaterial3D_ko2tv")
-use_collision = true
-mesh = SubResource("PlaneMesh_tvcjq")
 
 [node name="SpaceStation" parent="." instance=ExtResource("6_q17r8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, 22.517)

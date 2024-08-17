@@ -1,14 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dydh8twbudv4n"]
+[gd_scene load_steps=4 format=3 uid="uid://dydh8twbudv4n"]
 
-[ext_resource type="Texture2D" uid="uid://77csnbu1qskp" path="res://assets/textures/kenney's-prototype-textures/PNG/Light/texture_03.png" id="1_e3fy4"]
 [ext_resource type="Material" uid="uid://d38bsrpjdy2n8" path="res://assets/station/segments/wall_mat.tres" id="2_fhdru"]
 [ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat.tres" id="3_frex8"]
 [ext_resource type="PackedScene" uid="uid://hrvjra3ybe7r" path="res://assets/station/light_strip.tscn" id="3_okmjv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6gjy"]
-cull_mode = 2
-albedo_texture = ExtResource("1_e3fy4")
-uv1_triplanar = true
 
 [node name="CorridorMerger4Way" type="Node3D"]
 
@@ -126,7 +120,7 @@ size = Vector3(1, 2.664, 7)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing2/Walls"]
 transform = Transform3D(-0.5, -0.866025, 8.74228e-08, -0.866025, 0.5, 0, -4.37114e-08, -7.57103e-08, -1, 4.902, 5.404, 0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_fhdru")
 use_collision = true
 size = Vector3(1, 2.664, 7)
 
@@ -150,7 +144,7 @@ size = Vector3(1, 4.334, 6)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing2/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_fhdru")
 use_collision = true
 size = Vector3(8, 1, 7)
 
@@ -236,7 +230,7 @@ size = Vector3(1, 4.334, 6)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGMesh3D/CorridorSegmentRing4/Walls"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -4.898, 5.404, 0.5)
-material_override = SubResource("StandardMaterial3D_u6gjy")
+material_override = ExtResource("2_fhdru")
 use_collision = true
 size = Vector3(1, 2.664, 7)
 
