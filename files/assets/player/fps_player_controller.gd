@@ -64,7 +64,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _headbob(time) -> Vector3:
-	return Vector3(sin(time * bob_frequency) * bob_ammount, cos(time * bob_frequency / 2) * bob_ammount + 0.785, 0)
+	return Vector3(sin(time * bob_frequency) * bob_ammount / 2, cos(time * bob_frequency / 2) * bob_ammount / 2 + 0.785, 0)
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

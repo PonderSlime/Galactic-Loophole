@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwi078dil4t7i"]
+[gd_scene load_steps=12 format=3 uid="uid://bwi078dil4t7i"]
 
 [ext_resource type="Script" path="res://assets/player/fps_player_controller.gd" id="1_k8u5h"]
 [ext_resource type="PackedScene" uid="uid://jxroxrtev4bc" path="res://assets/player/models/hand.blend" id="2_v2hc6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://assets/station/spot_light_3d.gd" id="6_ckll0"]
 [ext_resource type="Script" path="res://assets/player/flashlight.gd" id="6_p7m71"]
 [ext_resource type="PackedScene" uid="uid://vw7c1nvg3a2v" path="res://screens/pause.tscn" id="8_m4q8c"]
+[ext_resource type="ArrayMesh" uid="uid://dsqurovlynvp" path="res://assets/models/items/flashlight.obj" id="10_gh5kp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohydy"]
 
@@ -63,3 +64,7 @@ shape = SubResource("CapsuleShape3D_ohydy")
 z_index = 140
 
 [node name="PostProccesing" parent="." instance=ExtResource("5_nnd4e")]
+
+[node name="Flashlight2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0999339, -0.00363646, -1.58955e-10, 0.000437188, 0.0120144, 0.0992747, -0.00361009, -0.099209, 0.0120223, 0.1, 0.631925, -0.126834)
+mesh = ExtResource("10_gh5kp")
