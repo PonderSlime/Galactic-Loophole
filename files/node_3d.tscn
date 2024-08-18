@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://s7131ctflt1l"]
+[gd_scene load_steps=22 format=3 uid="uid://s7131ctflt1l"]
 
 [ext_resource type="PackedScene" uid="uid://bwi078dil4t7i" path="res://assets/player/fps_player_controller.tscn" id="1_g37ta"]
 [ext_resource type="Shader" path="res://assets/shaders/outer_space.gdshader" id="2_liyho"]
@@ -33,7 +33,10 @@ sdfgi_y_scale = 0
 glow_enabled = true
 fog_density = 0.05
 volumetric_fog_density = 0.0
+adjustment_enabled = true
 adjustment_brightness = 0.6
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_q0u4g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lcfor"]
 size = Vector2(10.7, 5)
@@ -70,6 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18018, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lwn2a")
+camera_attributes = SubResource("CameraAttributesPractical_q0u4g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
