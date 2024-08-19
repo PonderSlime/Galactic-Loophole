@@ -5,6 +5,7 @@ var cans_count = 0
 var current_scene = null
 var power_off : bool = false
 var random10 = randi_range(0, 10)
+var select : bool = false
 func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)

@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxnhd4bokuh2v"]
+
+[ext_resource type="Script" path="res://screens/hud.gd" id="1_sss1q"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sss1q")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cursor" type="Control" parent="CenterContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CursorBottom" type="ColorRect" parent="CenterContainer/Cursor"]
+layout_mode = 2
+offset_left = -2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CursorTop" type="ColorRect" parent="CenterContainer/Cursor"]
+layout_mode = 2
+offset_left = -2.0
+offset_top = -13.0
+offset_right = 2.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CursorRight" type="ColorRect" parent="CenterContainer/Cursor"]
+layout_mode = 2
+offset_left = 3.0
+offset_top = -2.0
+offset_right = 13.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CursorLeft" type="ColorRect" parent="CenterContainer/Cursor"]
+layout_mode = 2
+offset_left = -13.0
+offset_top = -2.0
+offset_right = -3.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
