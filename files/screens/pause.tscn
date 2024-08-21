@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://vw7c1nvg3a2v"]
+[gd_scene load_steps=3 format=3 uid="uid://dhphm7otee87j"]
 
 [ext_resource type="Script" path="res://screens/pause_screen.gd" id="1_vrplo"]
 
@@ -43,6 +43,21 @@ layout_mode = 2
 text = "PAUSE"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 text = "Resume"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "Quit to Main Menu"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

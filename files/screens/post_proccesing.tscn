@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b755xi4isyt17"]
+[gd_scene load_steps=5 format=3 uid="uid://cnml2nj5336o3"]
 
 [ext_resource type="Shader" path="res://screens/vhs.gdshader" id="2_3d0ya"]
 
@@ -33,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="VHS" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_jgckh")
@@ -42,4 +43,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.389287, 0.389287, 0.389287, 0.4)

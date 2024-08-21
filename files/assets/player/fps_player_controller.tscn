@@ -1,14 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwi078dil4t7i"]
+[gd_scene load_steps=10 format=3 uid="uid://bwi078dil4t7i"]
 
 [ext_resource type="Script" path="res://assets/player/fps_player_controller.gd" id="1_k8u5h"]
-[ext_resource type="PackedScene" uid="uid://jxroxrtev4bc" path="res://assets/player/models/hand.blend" id="2_v2hc6"]
-[ext_resource type="PackedScene" uid="uid://bedqteedekurt" path="res://assets/player/models/helmet.tscn" id="3_qj1i8"]
-[ext_resource type="PackedScene" uid="uid://cjsa8tct3mcsp" path="res://assets/player/models/body.blend" id="4_2r1cg"]
 [ext_resource type="Script" path="res://assets/player/item_pickup.gd" id="5_mpy4d"]
-[ext_resource type="PackedScene" uid="uid://b755xi4isyt17" path="res://screens/post_proccesing.tscn" id="5_nnd4e"]
+[ext_resource type="PackedScene" uid="uid://cnml2nj5336o3" path="res://screens/post_proccesing.tscn" id="5_nnd4e"]
 [ext_resource type="Script" path="res://assets/station/spot_light_3d.gd" id="6_ckll0"]
 [ext_resource type="Script" path="res://assets/player/flashlight.gd" id="6_p7m71"]
-[ext_resource type="PackedScene" uid="uid://vw7c1nvg3a2v" path="res://screens/pause.tscn" id="8_m4q8c"]
+[ext_resource type="PackedScene" uid="uid://h7dwggfe5icg" path="res://screens/hud.tscn" id="8_6366g"]
+[ext_resource type="PackedScene" uid="uid://dhphm7otee87j" path="res://screens/pause.tscn" id="8_m4q8c"]
 [ext_resource type="ArrayMesh" uid="uid://dsqurovlynvp" path="res://assets/models/items/flashlight.obj" id="10_gh5kp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohydy"]
@@ -21,18 +19,6 @@ cam = NodePath("Camera")
 [node name="BodyCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ohydy")
 
-[node name="helmet2" parent="." instance=ExtResource("3_qj1i8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.676, 0.079)
-visible = false
-
-[node name="hand" parent="." instance=ExtResource("2_v2hc6")]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.428759, 0.186536, -0.630409)
-visible = false
-
-[node name="body" parent="." instance=ExtResource("4_2r1cg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-visible = false
-
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.785, 0.09)
 fov = 59.0
@@ -43,17 +29,6 @@ collision_mask = 2147483649
 collide_with_areas = true
 script = ExtResource("5_mpy4d")
 
-[node name="Flashlight" type="Node3D" parent="Camera"]
-script = ExtResource("6_p7m71")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Camera/Flashlight"]
-light_color = Color(0.960531, 0.779623, 0.726805, 1)
-light_energy = 0.1
-spot_range = 30.0
-spot_attenuation = 1.1
-spot_angle = 20.0
-script = ExtResource("6_ckll0")
-
 [node name="Area3D" type="Area3D" parent="."]
 metadata/teleportable_root = NodePath("..")
 
@@ -61,10 +36,27 @@ metadata/teleportable_root = NodePath("..")
 shape = SubResource("CapsuleShape3D_ohydy")
 
 [node name="PauseScreen" parent="." instance=ExtResource("8_m4q8c")]
-z_index = 140
+z_index = 100
 
 [node name="PostProccesing" parent="." instance=ExtResource("5_nnd4e")]
+mouse_filter = 2
 
 [node name="Flashlight2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0999339, -0.00363646, -1.58955e-10, 0.000437188, 0.0120144, 0.0992747, -0.00361009, -0.099209, 0.0120223, 0.1, 0.631925, -0.126834)
 mesh = ExtResource("10_gh5kp")
+
+[node name="Flashlight" type="Node3D" parent="Flashlight2"]
+transform = Transform3D(10, 2.38419e-07, 0, 2.38419e-07, 10, -1.19209e-07, -1.11759e-08, 0, 10, -0.0467876, 0.922233, 0.0178528)
+script = ExtResource("6_p7m71")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Flashlight2/Flashlight"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+light_color = Color(0.960531, 0.779623, 0.726805, 1)
+light_energy = 0.1
+spot_range = 30.0
+spot_attenuation = 1.1
+spot_angle = 20.0
+script = ExtResource("6_ckll0")
+
+[node name="HUD" parent="." instance=ExtResource("8_6366g")]
+z_index = -10

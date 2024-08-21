@@ -19,7 +19,7 @@ const base_fov = 75.0
 const fov_change = 1.5
 
 func _ready() -> void:
-	add_to_group("player")	
+	add_to_group("player")
 func _physics_process(delta):
 	if Input.is_action_just_pressed("grav_swap"):
 		grav = !grav

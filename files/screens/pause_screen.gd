@@ -23,3 +23,16 @@ func _is_paused():
 	elif pause_game == true:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
+
+
+func _on_options_pressed() -> void:
+	print("options")
+
+
+func _on_resume_pressed() -> void:
+	pause_game = false
+	get_tree().paused = !get_tree().paused
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

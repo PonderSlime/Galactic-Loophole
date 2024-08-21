@@ -10,7 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_colliding():
 		collider = get_collider()
-		GlobalVars.select = true
+		
+		if collider.has_meta("interact"):
+			GlobalVars.select = true
+		else:
+			GlobalVars.select = false
 		if Input.is_action_just_pressed("pickup") and collider.has_meta("item"):
 			var pickup:Node3D = collider.get_node(collider.get_meta("item"))
 			pickup.pickup()
