@@ -11,6 +11,31 @@
 [ext_resource type="PackedScene" uid="uid://cgvupop7jkth8" path="res://assets/enemy/creepy_enemy.tscn" id="10_d8fl7"]
 [ext_resource type="PackedScene" uid="uid://tybkiuiodgm3" path="res://assets/models/items/can.tscn" id="11_jpl5k"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_lcfor"]
+size = Vector2(10.7, 5)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p82rb"]
+size = Vector3(10.5, 5, 1)
+
+[sub_resource type="Gradient" id="Gradient_2h04q"]
+offsets = PackedFloat32Array(0.729412, 1)
+colors = PackedColorArray(0.850876, 0.294053, 0, 1, 0.12677, 0.686326, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aydao"]
+gradient = SubResource("Gradient_2h04q")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vjlbk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yj3w5"]
+noise = SubResource("FastNoiseLite_vjlbk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k75wo"]
+render_priority = 0
+shader = ExtResource("9_ccyv8")
+shader_parameter/noise = SubResource("NoiseTexture2D_yj3w5")
+shader_parameter/gradient = SubResource("GradientTexture1D_aydao")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_et1fb"]
 shader = ExtResource("2_liyho")
 shader_parameter/sky_color = Color(0.03, 0.05, 0.11, 1)
@@ -38,48 +63,10 @@ adjustment_brightness = 0.6
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_q0u4g"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lcfor"]
-size = Vector2(10.7, 5)
-orientation = 2
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_p82rb"]
-size = Vector3(10.5, 5, 1)
-
-[sub_resource type="Gradient" id="Gradient_2h04q"]
-offsets = PackedFloat32Array(0.729412, 1)
-colors = PackedColorArray(0.850876, 0.294053, 0, 1, 0.12677, 0.686326, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_aydao"]
-gradient = SubResource("Gradient_2h04q")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_vjlbk"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yj3w5"]
-noise = SubResource("FastNoiseLite_vjlbk")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k75wo"]
-render_priority = 0
-shader = ExtResource("9_ccyv8")
-shader_parameter/noise = SubResource("NoiseTexture2D_yj3w5")
-shader_parameter/gradient = SubResource("GradientTexture1D_aydao")
-
 [node name="Node3D" type="Node3D"]
-
-[node name="Earth" parent="." instance=ExtResource("7_fpf84")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 1750, 0, 0)
 
 [node name="FPSPlayerController" parent="." instance=ExtResource("1_g37ta")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18018, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lwn2a")
-camera_attributes = SubResource("CameraAttributesPractical_q0u4g")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
-light_color = Color(0.915044, 0.929723, 0.92265, 1)
-shadow_enabled = true
-directional_shadow_mode = 0
 
 [node name="SpaceStation" parent="." instance=ExtResource("6_q17r8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, 22.517)
@@ -134,10 +121,6 @@ script = ExtResource("4_wqpn4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("BoxShape3D_p82rb")
 
-[node name="BlackHole" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_bixfs")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -222, 222.07, 183.751)
-player = NodePath("../FPSPlayerController")
-
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -4.07929, 1.6, 0)
 material_override = SubResource("ShaderMaterial_k75wo")
@@ -145,14 +128,40 @@ material_override = SubResource("ShaderMaterial_k75wo")
 [node name="CreepyEnemy" parent="." instance=ExtResource("10_d8fl7")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -26.084, 1.03, -2.848)
 
-[node name="Can" parent="." instance=ExtResource("11_jpl5k")]
+[node name="Items" type="Node3D" parent="."]
+
+[node name="Can" parent="Items" instance=ExtResource("11_jpl5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9907, 2.51761, -7.23136)
 
-[node name="Can2" parent="." instance=ExtResource("11_jpl5k")]
+[node name="Can2" parent="Items" instance=ExtResource("11_jpl5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9907, 2.51761, -7.23136)
 
-[node name="Can3" parent="." instance=ExtResource("11_jpl5k")]
+[node name="Can3" parent="Items" instance=ExtResource("11_jpl5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9907, 2.51761, -7.23136)
 
-[node name="Can4" parent="." instance=ExtResource("11_jpl5k")]
+[node name="Can4" parent="Items" instance=ExtResource("11_jpl5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9907, 2.51761, -7.23136)
+
+[node name="WorldEnv" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="WorldEnv"]
+environment = SubResource("Environment_lwn2a")
+camera_attributes = SubResource("CameraAttributesPractical_q0u4g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnv"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+light_color = Color(0.915044, 0.929723, 0.92265, 1)
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="BlackHole" parent="WorldEnv" node_paths=PackedStringArray("player") instance=ExtResource("8_bixfs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -222, 222.07, 183.751)
+player = NodePath("../../FPSPlayerController")
+
+[node name="Earth" parent="WorldEnv" instance=ExtResource("7_fpf84")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 1750, 0, 0)
+
+[node name="PlayerRange" type="CSGSphere3D" parent="WorldEnv"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1, 0)
+use_collision = true
+radius = 100.0

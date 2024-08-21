@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvbqwyjo8xb31"]
 
 [ext_resource type="Material" uid="uid://d38bsrpjdy2n8" path="res://assets/station/segments/wall_mat.tres" id="1_pu1ty"]
-[ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat.tres" id="2_b2ri1"]
+[ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat_dark.tres" id="2_b2ri1"]
 
 [node name="CorridorSegmentRing1" type="Node3D"]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://77csnbu1qskp" path="res://assets/textures/kenney's-prototype-textures/PNG/Light/texture_03.png" id="1_hqong"]
 [ext_resource type="Material" uid="uid://d38bsrpjdy2n8" path="res://assets/station/segments/wall_mat.tres" id="2_7okbv"]
 [ext_resource type="PackedScene" uid="uid://hrvjra3ybe7r" path="res://assets/station/light_strip.tscn" id="2_fy73u"]
-[ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat.tres" id="3_nivuv"]
+[ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat_dark.tres" id="3_nivuv"]
 [ext_resource type="Material" uid="uid://bw56xudy06u64" path="res://assets/station/segments/steps_mat.tres" id="5_8chhn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxa2r"]

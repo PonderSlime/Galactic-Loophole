@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://d38bsrpjdy2n8" path="res://assets/station/segments/wall_mat.tres" id="2_gbcna"]
 [ext_resource type="PackedScene" uid="uid://hrvjra3ybe7r" path="res://assets/station/light_strip.tscn" id="2_idaq5"]
-[ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat.tres" id="3_o2y8p"]
+[ext_resource type="Material" uid="uid://b4vy5ehtjebfd" path="res://assets/station/segments/floor_mat_dark.tres" id="3_o2y8p"]
 
 [node name="CorridorMerger3Way" type="Node3D"]
 
