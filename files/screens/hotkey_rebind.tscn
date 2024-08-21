@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2jiaywk3mk8w"]
+[gd_scene load_steps=10 format=3 uid="uid://d2jiaywk3mk8w"]
 
 [ext_resource type="Script" path="res://screens/hotkey_rebind.gd" id="1_6upya"]
 [ext_resource type="PackedScene" uid="uid://dqptk48yvkkku" path="res://screens/input_button.tscn" id="1_q072e"]
+[ext_resource type="FontFile" uid="uid://kmrd4o2glyp1" path="res://assets/font/Inter_18pt-Regular.ttf" id="3_uuxte"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7smpx"]
 
@@ -25,12 +26,13 @@ grow_vertical = 2
 script = ExtResource("1_6upya")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 450)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -250.0
-offset_bottom = -250.0
+offset_top = 200.0
+offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_7smpx")
@@ -58,9 +60,12 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 focus_mode = 0
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_uuxte")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lbrsy")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7mbvm")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_cqwm3")

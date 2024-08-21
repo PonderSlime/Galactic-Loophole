@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqptk48yvkkku"]
+[gd_scene load_steps=6 format=3 uid="uid://dqptk48yvkkku"]
+
+[ext_resource type="FontFile" uid="uid://kmrd4o2glyp1" path="res://assets/font/Inter_18pt-Regular.ttf" id="1_4703p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pg2h2"]
 
@@ -42,7 +44,9 @@ layout_mode = 2
 
 [node name="LabelAction" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_4703p")
+theme_override_font_sizes/font_size = 24
 text = "action name"
 vertical_alignment = 1
 
@@ -52,5 +56,7 @@ size_flags_horizontal = 3
 
 [node name="LabelInput" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_4703p")
+theme_override_font_sizes/font_size = 24
 text = "input key"
